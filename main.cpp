@@ -19,7 +19,13 @@ int main()
 
 	std::cout << "ans = " << ans << std::endl;
 	
+	//TaskC	
+	Coord3D pos = {0, 0, 100.0};
+	Coord3D vel = {1, -5, 0.2};
+	move(&pos, &vel, 2.0);
+	std::cout << pos.x << " " << pos.y << " " << pos.z << std::endl;
 	
 	
+
 	return 0;
 }
