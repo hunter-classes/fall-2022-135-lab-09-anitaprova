@@ -25,7 +25,22 @@ int main()
 	move(&pos, &vel, 2.0);
 	std::cout << pos.x << " " << pos.y << " " << pos.z << std::endl;
 	
-	
+	//TaskE	
+	double x, y, z;
+	std::cout << "Enter position: ";
+	std::cin >> x >> y >> z;
+    	Coord3D *ppos = createCoord3D(x,y,z);
+    
+	std::cout << "Enter velocity: ";
+	std::cin >> x >> y >> z;
+    	Coord3D *pvel = createCoord3D(x,y,z);
+
+    	move(ppos, pvel, 10.0);
+
+	std::cout << "Coordinates after 10 seconds: " << (*ppos).x << " " << (*ppos).y << " " << (*ppos).z << std::endl;
+
+ 	deleteCoord3D(ppos);
+    	deleteCoord3D(pvel);
 
 	return 0;
 }
