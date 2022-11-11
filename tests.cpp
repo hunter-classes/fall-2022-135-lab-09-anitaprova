@@ -43,5 +43,5 @@ TEST_CASE("TASK E - create & delete") {
         Coord3D* cre = createCoord3D(2.3, 5.8, 27.9);
         CHECK(compare(del, cre));
         deleteCoord3D(del);
-        CHECK(!compare(del, cre));
+        CHECK(!compare(del, cre)); //there should be nothing left to compare
 }
