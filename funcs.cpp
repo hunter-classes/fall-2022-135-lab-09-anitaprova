@@ -6,7 +6,7 @@
 double length(Coord3D *p) {	
 	double d = pow((*p).x,2) + pow((*p).y,2) + pow((*p).z,2);	
 	
-	return sqrt(d);
+	return round((sqrt(d)*10000.0))/10000.0;
 }
 
 Coord3D* fartherFromOrigin(Coord3D *p1, Coord3D *p2){
@@ -38,4 +38,14 @@ Coord3D* createCoord3D(double x, double y, double z){
 
 void deleteCoord3D(Coord3D *p){
 	delete p;
+}
+
+bool compare(Coord3D *p, Coord3D *q) {
+	if(p -> x == q -> x && p -> y == q -> y && p -> z == q -> z)
+	{
+		return true;
+	}
+	else {
+		return false;
+	}
 }
