@@ -32,10 +32,16 @@ TEST_CASE("TASK C - move") {
 	CHECK(pos.z == 100.4);
 }
 
-TEST_CASE("TASK E - cerate & delete") {
-	Coord3D* c = createCoord3D(2.3, 5.8, 27.9);
-	Coord3D* correct = createCoord3D(2.3, 5.8, 27.9);	
-	CHECK(compare(c, correct));
-	deleteCoord3D(c); 
-	CHECK(!compare(c, correct));
+TEST_CASE("TASK E - create & delete") {
+	Coord3D* a = createCoord3D(89.0, 55.2, 7.1);
+	Coord3D* b = createCoord3D(89.0, 55.2, 7.1);	
+	CHECK(compare(a, b));
+	deleteCoord3D(b); 
+	CHECK(!compare(a, b));
+
+	Coord3D* del = createCoord3D(2.3, 5.8, 27.9);
+        Coord3D* cre = createCoord3D(2.3, 5.8, 27.9);
+        CHECK(compare(del, cre));
+        deleteCoord3D(del);
+        CHECK(!compare(del, cre));
 }
